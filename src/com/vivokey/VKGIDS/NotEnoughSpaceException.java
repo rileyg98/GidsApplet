@@ -22,36 +22,42 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package com.mysmartlogon.gidsApplet;
+package com.vivokey.VKGIDS;
 
 /**
- * \brief The InvalidArgumentsException class.
+ * \brief Exception class.
+ *
+ * This class is a singleton in order to save resources.
+ *	Should be thrown whenever:
+ *	- A limit for the maximum amount of children of a DedicatedFile is exceeded.
+ *	- An array can not hold that amount of data.
+ *	- Memory allocation failed due to full RAM/EEPROM.
  *
  * \attention This singleton is not thread-safe.
  */
-public class InvalidArgumentsException extends Exception {
+public class NotEnoughSpaceException extends Exception {
     /**
      *
      */
-    public static InvalidArgumentsException instance;
+    public static NotEnoughSpaceException instance;
+
 
     /**
      * \brief Private access constructor (Singleton pattern).
      */
-    private InvalidArgumentsException() {
+    private NotEnoughSpaceException() {
 
     }
 
     /**
      * \brief Get the instance.
      *
-     * \return The InvalidArgumentsException instance.
+     * \return The FileNotFoundException instance.
      */
-    public static InvalidArgumentsException getInstance() {
+    public static NotEnoughSpaceException getInstance() {
         if(instance == null) {
-            instance = new InvalidArgumentsException();
+            instance = new NotEnoughSpaceException();
         }
         return instance;
     }
-
 }

@@ -22,11 +22,10 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package com.mysmartlogon.gidsApplet;
+package com.vivokey.VKGIDS;
 
 import javacard.framework.ISO7816;
 import javacard.framework.ISOException;
-import javacard.framework.OwnerPIN;
 import javacard.framework.PIN;
 
 /**
@@ -34,7 +33,7 @@ import javacard.framework.PIN;
  *
  */
 
-public class GidsPIN extends OwnerPIN implements PIN {
+public class GidsPIN extends TarPIN implements PIN {
 
 
     private byte currentPINLen = 0;

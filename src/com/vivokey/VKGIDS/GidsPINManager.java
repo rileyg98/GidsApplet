@@ -22,7 +22,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package com.mysmartlogon.gidsApplet;
+package com.vivokey.VKGIDS;
 
 import javacard.framework.APDU;
 import javacard.framework.ISO7816;
@@ -42,7 +42,7 @@ public class GidsPINManager {
     /* PIN, PUK and key realted constants */
     // PIN:
     private static final byte PIN_MAX_TRIES = 3;
-    private static final byte PIN_MIN_LENGTH = 4;
+    private static final byte PIN_MIN_LENGTH = 0;
     private static final byte PIN_MAX_LENGTH = 16;
     // state for admin authentication
     private static final byte ADMIN_NOT_AUTHENTICATED = 0;
@@ -462,9 +462,9 @@ public class GidsPINManager {
         } else {
             ISOException.throwIt(ISO7816.SW_DATA_INVALID);
         }
-        RandomData randomData = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM);
+        RandomData randomData = RandomData.getInstance(RandomData.ALG_KEYGENERATION);
         randomData.setSeed(buf, pos, len);
-        randomData.generateData(CardChallenge, (short) 0, len);
+        randomData.nextBytes(CardChallenge, (short) 0, len);
 
         pos = 0;
         buf[pos++] = (byte) 0x7C;
@@ -524,8 +524,8 @@ public class GidsPINManager {
             Util.arrayCopy(buffer, (short) 32, sharedKey, (short) 0, (short) 7);
 
             // generate Z2
-            RandomData randomData = RandomData.getInstance(RandomData.ALG_SECURE_RANDOM);
-            randomData.generateData(sharedKey, (short) 7, (short) 7);
+            RandomData randomData = RandomData.getInstance(RandomData.ALG_KEYGENERATION);
+            randomData.nextBytes(sharedKey, (short) 7, (short) 7);
 
             // copy R1
             Util.arrayCopy(ExternalChallenge, (short) 0, buffer, (short) 0, (short) 16);

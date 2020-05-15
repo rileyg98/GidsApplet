@@ -22,7 +22,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package com.mysmartlogon.gidsApplet;
+package com.vivokey.VKGIDS;
 
 import javacard.framework.Applet;
 import javacard.framework.ISO7816;
@@ -35,7 +35,6 @@ import javacard.security.KeyBuilder;
 import javacard.security.KeyPair;
 import javacard.security.PrivateKey;
 import javacard.security.PublicKey;
-import javacard.security.RSAPrivateCrtKey;
 import javacard.security.RSAPublicKey;
 import javacardx.crypto.Cipher;
 import javacard.security.CryptoException;

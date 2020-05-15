@@ -22,42 +22,39 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package com.mysmartlogon.gidsApplet;
+package com.vivokey.VKGIDS;
 
 /**
- * \brief Exception class.
+ * \brief The NotFoundException class.
  *
- * This class is a singleton in order to save resources.
- *	Should be thrown whenever:
- *	- A limit for the maximum amount of children of a DedicatedFile is exceeded.
- *	- An array can not hold that amount of data.
- *	- Memory allocation failed due to full RAM/EEPROM.
+ * Should be thrown whenever a specified file or tag in a TLV structure
+ * could not be found. This class is a singleton in order to save resources.
  *
  * \attention This singleton is not thread-safe.
  */
-public class NotEnoughSpaceException extends Exception {
+public class NotFoundException extends Exception {
     /**
      *
      */
-    public static NotEnoughSpaceException instance;
-
+    public static NotFoundException instance;
 
     /**
      * \brief Private access constructor (Singleton pattern).
      */
-    private NotEnoughSpaceException() {
+    private NotFoundException() {
 
     }
 
     /**
      * \brief Get the instance.
      *
-     * \return The FileNotFoundException instance.
+     * \return The NotFoundException instance.
      */
-    public static NotEnoughSpaceException getInstance() {
+    public static NotFoundException getInstance() {
         if(instance == null) {
-            instance = new NotEnoughSpaceException();
+            instance = new NotFoundException();
         }
         return instance;
     }
+
 }
