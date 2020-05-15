@@ -16,8 +16,13 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>com.nxp.id.jcop.eclipse.jcopbuildverifier</name>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+			<triggers>full,incremental,</triggers>
 			<arguments>
+				<dictionary>
+					<key>LaunchConfigHandle</key>
+					<value>&lt;project&gt;/.externalToolBuilders/com.nxp.id.jcop.eclipse.jcopbuildverifier (5).launch</value>
+				</dictionary>
 			</arguments>
 		</buildCommand>
 	</buildSpec>

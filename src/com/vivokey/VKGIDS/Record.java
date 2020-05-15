@@ -1,7 +1,10 @@
 /*
- * GidsApplet: A Java Card implementation of the GIDS (Generic Identity
+ * VKGIDS: A Java Card implementation of the GIDS (Generic Identity
  * Device Specification) specification
  * https://msdn.microsoft.com/en-us/library/windows/hardware/dn642100%28v=vs.85%29.aspx
+ * Copyright (C) 2020 VivoKey Technologies
+ * 
+ * Based on GidsApplet 
  * Copyright (C) 2016  Vincent Le Toux(vincent.letoux@mysmartlogon.com)
  *
  * It has been based on the IsoApplet
@@ -21,7 +24,6 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
-
 package com.vivokey.VKGIDS;
 
 import javacard.framework.Util;
